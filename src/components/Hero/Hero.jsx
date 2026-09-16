@@ -60,7 +60,7 @@ className="hero relative isolate h-screen w-full overflow-hidden flex justify-ce
         ref={heroContentRef}
         className="hero-content z-10 max-w-[92%] sm:max-w-[580px] md:max-w-[660px] lg:max-w-[700px] flex flex-col items-center font-semibold px-4 pt-8 md:pt-0"
       >
-       <h1 className="whitespace-nowrap font-Plus Jakarta Sans font-black tracking-tight leading-[1.1] mb-2.5 text-[34px] sm:text-[42px] md:text-[52px] lg:text-[58px] xl:text-[62px]">
+       <h1 className=" font-Plus Jakarta Sans font-black tracking-tight leading-[1.1] mb-2.5 text-[34px] sm:text-[42px] md:text-[52px] md:whitespace-nowrap lg:text-[58px] lg:whitespace-nowrap xl:text-[62px]">
   <TextType
     text={[
       "LevelUp with",
