@@ -1,0 +1,29 @@
+﻿@import "tailwindcss";
+@import "./styles/animations.css";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-clash: "Clash Grotesk", sans-serif;
+  --font-hind: "Hind", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-staatliches: "Staatliches", sans-serif;
+  --font-funnel: "Funnel Sans", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+
+  --color-brand-yellow: #ffeb00;
+  --color-brand-yellow-light: #fff200;
+  --color-brand-yellow-hero: #efff14;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
