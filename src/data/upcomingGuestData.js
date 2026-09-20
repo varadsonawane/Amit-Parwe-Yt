@@ -3,6 +3,4 @@ export const upcomingGuestData = {
   image: "/guest/guest1.jpg",
   description:
     "A short description about the upcoming guest will appear here.",
-
-
 };

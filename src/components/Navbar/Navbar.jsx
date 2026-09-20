@@ -107,6 +107,14 @@ export default function Navbar() {
         >
           Our Team
         </a>
+
+        
+        <a
+          href="#upcoming-guest"
+          className="text-white transition-all duration-300 whitespace-nowrap hover:text-[#8b8a8a] hover:-translate-y-1 opacity-0"
+        >
+          Speak Up
+        </a>
         <a
           href="#contact"
           className="text-white transition-all duration-300 whitespace-nowrap hover:text-[#8b8a8a] hover:-translate-y-1 opacity-0"

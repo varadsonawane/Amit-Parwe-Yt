@@ -402,22 +402,22 @@ const [showGuestQuestions, setShowGuestQuestions] = useState(false);
   // =================================================
 
   if (selectedGuest) {
- const totalQuestions = questions.length * 10;
+ const totalQuestions = questions.length * 13;
 
 const uniqueUsers =
   new Set(
     questions.map((item) => item.name?.trim().toLowerCase())
-  ).size * 10;
+  ).size * 13;
 
 const maleCount =
   questions.filter(
     (item) => item.gender?.toLowerCase() === "male"
-  ).length * 10;
+  ).length * 13;
 
 const femaleCount =
   questions.filter(
     (item) => item.gender?.toLowerCase() === "female"
-  ).length * 10;
+  ).length * 13;
 
   return (
     <div className="min-h-screen bg-black px-5 py-8 text-white sm:px-8 lg:px-12">

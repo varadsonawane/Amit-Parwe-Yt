@@ -33,7 +33,7 @@ export default function Banner() {
       <img
         src="/image/logomic.png"
         className="banner-logo absolute flex justify-center items-center top-22 sm:top-8 md:top-8 lg:top-2 w-8 sm:w-10 md:w-12 lg:w-12 h-auto z-[2] opacity-90"
-        alt="TAP Podcast Logo"
+        alt="Amit Parwe Logo"
       />
 
       <h1 className="absolute inset-0 w-full h-full bg-[#e0dede] font-anton font-normal text-black mix-blend-screen leading-none flex text-center justify-center items-center z-[1] select-none text-[6.6rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] xl:text-[18rem]">

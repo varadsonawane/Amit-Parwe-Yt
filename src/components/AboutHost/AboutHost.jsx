@@ -48,25 +48,33 @@ export default function AboutHost() {
     };
   }, []);
 
-  const handleMouseMove = (e) => {
-    if (window.innerWidth <= 768 || !cardRef.current || !imgRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+const handleMouseMove = (e) => {
+  if (window.innerWidth <= 768 || !cardRef.current || !imgRef.current) {
+    return;
+  }
 
-    const moveX = (x - rect.width / 2) / 25;
-    const moveY = (y - rect.height / 2) / 25;
+  const rect = cardRef.current.getBoundingClientRect();
 
-    imgRef.current.style.transform = `translate(${moveX}px,${moveY}px) scale(1.06) rotateY(${
-      moveX / 2
-    }deg) rotateX(${-moveY / 2}deg)`;
-  };
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
 
-  const handleMouseLeave = () => {
-    if (imgRef.current) {
-      imgRef.current.style.transform = "translate(0,0) scale(1)";
-    }
-  };
+  const moveX = (x - rect.width / 2) / 25;
+  const moveY = (y - rect.height / 2) / 25;
+
+  imgRef.current.style.transform = `
+    translate(${moveX}px, ${moveY}px)
+    scale(1.06)
+    rotateY(${moveX / 2}deg)
+    rotateX(${-moveY / 2}deg)
+  `;
+};
+
+const handleMouseLeave = () => {
+  if (imgRef.current) {
+    imgRef.current.style.transform =
+      "translate(0, 0) scale(1) rotateY(0deg) rotateX(0deg)";
+  }
+};
 
   return (
     <section
@@ -111,26 +119,51 @@ export default function AboutHost() {
           </a>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div
-          ref={cardRef}
-          className="host-right reveal-right flex-1 order-1 md:order-2 relative flex justify-center overflow-hidden [perspective:900px] group"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="reveal-layer"></div>
-          <img
-            ref={imgRef}
-            src="/image/hostimage.png"
-            alt="host Image"
-            className="w-[230px] sm:w-[280px] md:w-[330px] lg:w-[380px] xl:w-[410px] rounded-xl block shadow-2xl transition-transform duration-150 ease-out will-change-transform group-hover:scale-[1.05]"
-          />
-          <div className="card-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end justify-start p-4 sm:p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-            <h3 className="font-clash font-semibold text-white tracking-wide text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
-              Amit Parwe
-            </h3>
-          </div>
-        </div>
+       {/* RIGHT IMAGE */}
+<div
+  ref={cardRef}
+  className="host-right reveal-right order-1 md:order-2 flex-1 flex justify-center [perspective:900px]"
+  onMouseMove={handleMouseMove}
+  onMouseLeave={handleMouseLeave}
+>
+  <div className="relative w-[230px] sm:w-[280px] md:w-[330px] lg:w-[380px] xl:w-[410px] overflow-hidden rounded-xl group">
+
+    {/* IMAGE */}
+    <img
+      ref={imgRef}
+      src="/image/hostimage.png"
+      alt="Amit Parwe"
+      className="block w-full h-auto rounded-xl shadow-2xl transition-transform duration-150 ease-out will-change-transform"
+    />
+
+    {/* HOVER OVERLAY */}
+    <div
+      className="
+        absolute inset-0
+        flex items-end justify-start
+        rounded-xl
+        bg-gradient-to-t from-black/90 via-black/30 to-transparent
+        p-4 sm:p-5 md:p-6
+        opacity-0
+        transition-opacity duration-300
+        group-hover:opacity-100
+      "
+    >
+      <h3
+        className="
+          font-clash font-semibold text-white tracking-wide
+          text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem]
+          translate-y-6
+          transition-transform duration-300
+          group-hover:translate-y-0
+        "
+      >
+        Amit Parwe
+      </h3>
+    </div>
+
+  </div>
+</div>
       </div>
     </section>
   );

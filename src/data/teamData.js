@@ -4,7 +4,7 @@
     members: [
       {
         name: "Amit Parwe",
-        role: "Founder & CEO — Host of TAP Podcast",
+        role: "Host • Founder • CEO ",
         subrole: "Author • Music Composer",
         img: "/image/amit1.jpeg",
         big: true
@@ -30,7 +30,7 @@
       {
         name: "Varad",
         role: "Chief Technology Officer (CTO)",
-        img: "/image/varad1526 (2).png",
+        img: "/image/varad07.png",
         big: true
       }
     ]

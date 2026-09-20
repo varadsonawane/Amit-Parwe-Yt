@@ -18,7 +18,8 @@ const UpcomingGuest = () => {
   const [questionCity, setQuestionCity] = useState("");
   const [question, setQuestion] = useState("");
   const [questionSubmitted, setQuestionSubmitted] = useState(false);
-const [questionError, setQuestionError] = useState("");
+  const [questionError, setQuestionError] = useState("");
+
   // ================= FETCH ACTIVE GUEST =================
   useEffect(() => {
     const fetchGuest = async () => {
@@ -44,81 +45,81 @@ const [questionError, setQuestionError] = useState("");
 
   // ================= FEEDBACK SUBMIT =================
   const handleFeedbackSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (
-    !feedbackName.trim() ||
-    !feedbackEmail.trim() ||
-    !feedback.trim()
-  ) {
-    return;
-  }
+    if (
+      !feedbackName.trim() ||
+      !feedbackEmail.trim() ||
+      !feedback.trim()
+    ) {
+      return;
+    }
 
-  const { error } = await supabase
-    .from("feedback")
-    .insert([
-      {
-        name: feedbackName,
-        email: feedbackEmail,
-        feedback: feedback,
-      },
-    ]);
+    const { error } = await supabase
+      .from("feedback")
+      .insert([
+        {
+          name: feedbackName,
+          email: feedbackEmail,
+          feedback: feedback,
+        },
+      ]);
 
-  if (error) {
-    console.error("Error submitting feedback:", error);
-    return;
-  }
+    if (error) {
+      console.error("Error submitting feedback:", error);
+      return;
+    }
 
-  setFeedbackName("");
-  setFeedbackEmail("");
-  setFeedback("");
-  setFeedbackSubmitted(true);
-};
+    setFeedbackName("");
+    setFeedbackEmail("");
+    setFeedback("");
+    setFeedbackSubmitted(true);
+  };
 
   // ================= QUESTION SUBMIT =================
   const handleQuestionSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  setQuestionError("");
-  setQuestionSubmitted(false);
+    setQuestionError("");
+    setQuestionSubmitted(false);
 
-  if (
-    !questionName.trim() ||
-    !questionGender ||
-    !questionCity.trim() ||
-    !question.trim()
-  ) {
-    return;
-  }
+    if (
+      !questionName.trim() ||
+      !questionGender ||
+      !questionCity.trim() ||
+      !question.trim()
+    ) {
+      return;
+    }
 
-  if (!guest?.id) {
-    setQuestionError("No active guest found.");
-    console.error("No active guest found:", guest);
-    return;
-  }
+    if (!guest?.id) {
+      setQuestionError("No active guest found.");
+      console.error("No active guest found:", guest);
+      return;
+    }
 
-  const { error } = await supabase
-    .from("questions")
-    .insert({
-      name: questionName.trim(),
-      gender: questionGender,
-      city: questionCity.trim(),
-      question: question.trim(),
-      guest_id: guest.id,
-    });
+    const { error } = await supabase
+      .from("questions")
+      .insert({
+        name: questionName.trim(),
+        gender: questionGender,
+        city: questionCity.trim(),
+        question: question.trim(),
+        guest_id: guest.id,
+      });
 
-  if (error) {
-    console.error("QUESTION ERROR:", error);
-    setQuestionError(error.message);
-    return;
-  }
+    if (error) {
+      console.error("QUESTION ERROR:", error);
+      setQuestionError(error.message);
+      return;
+    }
 
-  setQuestionName("");
-  setQuestionGender("");
-  setQuestionCity("");
-  setQuestion("");
-  setQuestionSubmitted(true);
-};
+    setQuestionName("");
+    setQuestionGender("");
+    setQuestionCity("");
+    setQuestion("");
+    setQuestionSubmitted(true);
+  };
 
   return (
     <section
@@ -146,8 +147,25 @@ const [questionError, setQuestionError] = useState("");
           {/* ================= FEEDBACK SIDE ================== */}
           {/* ================================================= */}
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
+          <div
+            className="
+              rounded-2xl
+              border border-white/10
+              bg-white/5
+              p-6
+              backdrop-blur-md
+              sm:p-8
 
+              transition-all
+              duration-300
+              ease-out
+
+              hover:-translate-y-1
+              hover:border-white/20
+              hover:bg-white/[0.07]
+              hover:shadow-2xl
+            "
+          >
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Share Your Thoughts
             </h2>
@@ -169,7 +187,6 @@ const [questionError, setQuestionError] = useState("");
               onSubmit={handleFeedbackSubmit}
               className="mt-6 space-y-4"
             >
-
               {/* Name */}
               <input
                 type="text"
@@ -177,7 +194,7 @@ const [questionError, setQuestionError] = useState("");
                 onChange={(e) => setFeedbackName(e.target.value)}
                 placeholder="Your Name"
                 required
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
               />
 
               {/* Email */}
@@ -187,7 +204,7 @@ const [questionError, setQuestionError] = useState("");
                 onChange={(e) => setFeedbackEmail(e.target.value)}
                 placeholder="Your Email"
                 required
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
               />
 
               {/* Feedback */}
@@ -197,17 +214,16 @@ const [questionError, setQuestionError] = useState("");
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Your feedback or suggestion..."
                 required
-                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
               />
 
               {/* Submit */}
               <button
                 type="submit"
-                className="cursor-pointer rounded-lg bg-[#efff14] px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-1"
+                className="cursor-pointer rounded-lg bg-[#efff14] px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 SEND FEEDBACK
               </button>
-
             </form>
           </div>
 
@@ -215,8 +231,25 @@ const [questionError, setQuestionError] = useState("");
           {/* ================ UPCOMING GUEST ================= */}
           {/* ================================================= */}
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
+          <div
+            className="
+              rounded-2xl
+              border border-white/10
+              bg-white/5
+              p-6
+              backdrop-blur-md
+              sm:p-8
 
+              transition-all
+              duration-300
+              ease-out
+
+              hover:-translate-y-1
+              hover:border-white/20
+              hover:bg-white/[0.07]
+              hover:shadow-2xl
+            "
+          >
             {/* ================= GUEST LOADING ================= */}
             {guestLoading ? (
               <p className="text-white/60">
@@ -240,7 +273,7 @@ const [questionError, setQuestionError] = useState("");
                   <img
                     src={guest.image_url}
                     alt={guest.name}
-                    className="h-40 w-full rounded-xl object-cover sm:h-40 sm:w-40"
+                    className="h-40 w-full rounded-xl object-cover transition-transform duration-300 sm:h-40 sm:w-40"
                   />
 
                   {/* Guest Details */}
@@ -273,13 +306,14 @@ const [questionError, setQuestionError] = useState("");
             )}
 
             {/* ================= ASK QUESTION ================= */}
-
             <div className="mt-8">
 
               <h3 className="text-lg font-semibold text-white">
                 Have a question for the guest?
               </h3>
-
+              <p className="text-sm text-white">
+                ( तुमच्या मनातला प्रश्न आम्हाला पाठवा. )
+              </p>
               {/* Success Message */}
               {questionSubmitted && (
                 <p className="mt-3 text-sm font-medium text-green-400">
@@ -287,25 +321,26 @@ const [questionError, setQuestionError] = useState("");
                 </p>
               )}
 
-{questionError && (
-  <p className="mt-3 text-sm font-medium text-red-400">
-    ✕ {questionError}
-  </p>
-)}
+              {/* Error */}
+              {questionError && (
+                <p className="mt-3 text-sm font-medium text-red-400">
+                  ✕ {questionError}
+                </p>
+              )}
+
               {/* Question Form */}
               <form
                 onSubmit={handleQuestionSubmit}
                 className="mt-4 space-y-3"
               >
-
                 {/* Name */}
                 <input
                   type="text"
                   value={questionName}
                   onChange={(e) => setQuestionName(e.target.value)}
-                  placeholder="Your Name"
+                  placeholder="Your Nickname (No Worries! It will be private)"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
                 />
 
                 {/* Gender */}
@@ -313,7 +348,7 @@ const [questionError, setQuestionError] = useState("");
                   value={questionGender}
                   onChange={(e) => setQuestionGender(e.target.value)}
                   required
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-white/30"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors duration-200 focus:border-white/30"
                 >
                   <option value="" disabled className="bg-black">
                     Select Gender
@@ -339,7 +374,7 @@ const [questionError, setQuestionError] = useState("");
                   onChange={(e) => setQuestionCity(e.target.value)}
                   placeholder="Your City"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
                 />
 
                 {/* Question */}
@@ -349,21 +384,21 @@ const [questionError, setQuestionError] = useState("");
                   onChange={(e) => setQuestion(e.target.value)}
                   placeholder="Write your question..."
                   required
-                  className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/30"
+                  className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-white/40 transition-colors duration-200 focus:border-white/30"
                 />
 
                 {/* Submit Question */}
                 <button
                   type="submit"
-                  className="mt-1 cursor-pointer rounded-lg bg-[#efff14] px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-1"
+                  className="mt-1 cursor-pointer rounded-lg bg-[#efff14] px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   SUBMIT QUESTION
                 </button>
-
               </form>
             </div>
 
           </div>
+
         </div>
       </div>
     </section>

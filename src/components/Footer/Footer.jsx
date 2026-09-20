@@ -12,7 +12,7 @@ export default function Footer() {
         {/* BRAND */}
         <div className="footer-brand flex-1 min-w-[240px]">
           <h2 className="text-white font-bold text-3xl sm:text-4xl md:text-4xl lg:text-[44px] mb-2.5 leading-tight">
-            TAP Podcast
+            Amit Parwe
           </h2>
           <p className="text-gray-400 font-semibold text-sm sm:text-base leading-relaxed mb-4 max-w-xs mx-auto md:mx-0">
             ज्ञान, अनुभव आणि विचारांना दिशा देणारा संवाद.
@@ -24,11 +24,11 @@ export default function Footer() {
             tapthepodcast@gmail.com
           </a>
           <h1 className="topgo mt-4 sm:mt-6 text-gray-500 hover:text-white font-manrope text-base sm:text-lg md:text-xl cursor-pointer transition-colors justify-center md:justify-start flex">
-            <a href="#home" onClick={scrollToTop}>
+            <a href="#home" >
               Back to Top ↑
             </a>
           </h1>
-          <a href="#home" onClick={scrollToTop}>
+          <a href="#home" >
             <img
               src="/image/logomic.png"
               className="gotop fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-11 h-11 sm:w-13 sm:h-13 md:w-14 md:h-14 rounded-full cursor-pointer flex justify-center items-center z-[1000] transition-transform duration-300 hover:-translate-y-1 drop-shadow-xl select-none"
@@ -68,7 +68,8 @@ export default function Footer() {
             Follow
           </h4>
           <a
-            href="https://www.youtube.com/@PodcastTAP"
+            href="https://www.youtube.com/@AmitParweOfficial
+"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"
@@ -76,7 +77,7 @@ export default function Footer() {
             &gt;YouTube
           </a>
           <a
-            href="https://www.instagram.com/tap_podccast"
+            href="https://www.instagram.com/amitparweofficial"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"
@@ -95,7 +96,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom border-t border-[#222] mt-10 sm:mt-12 pt-5 text-center text-xs sm:text-sm text-gray-500 font-semibold">
-        <p>© 2026 TAP Podcast. All rights reserved.</p>
+        <p>© 2026 Amit Parwe. All rights reserved.</p>
       </div>
     </footer>
   );

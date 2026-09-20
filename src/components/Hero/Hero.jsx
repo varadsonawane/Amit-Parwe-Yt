@@ -64,23 +64,19 @@ className="hero relative isolate h-screen w-full overflow-hidden flex justify-ce
   <TextType
     text={[
       "LevelUp with",
-      "Enhanced with",
-      "Inspired by",
-      "Connected with",
-      "Learn with",
-      "Grow with",
+     
     ]}
     typingSpeed={80}
     deletingSpeed={50}
     pauseDuration={1200}
     showCursor={false}
-    className="inline"
+    className="inline text-3xl"
   />
 
   {" "}
 
   <span className="text-brand-yellow-hero font-playfair">
-    Amit Parwe
+    <br/>Amit Parwe
   </span>
 </h1>
         <p className="font-hind font-medium text-[0.8rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1rem] text-gray-200 mb-6 sm:mb-7 px-2">
