@@ -1,6 +1,6 @@
 ﻿export const channelsData = [
   {
-    name: "TAP Podcast",
+    name: "Amit Parwe",
     desc: "YOUTUBE : 60K+ SUBSCRIBERS",
     desc2: "INSTAGRAM : 20K+ FOLLOWERS",
     link: "https://www.youtube.com/@amitparweofficial",
@@ -8,7 +8,7 @@
     img: "/image/hostchannel1.jpeg"
   },
   {
-    name: "TAP Clips",
+    name: "Amit Parwe Clips",
     desc: "YOUTUBE : 10K+ SUBSCRIBERS",
     desc2: null,
     link: "https://youtube.com/@amitparweclips",

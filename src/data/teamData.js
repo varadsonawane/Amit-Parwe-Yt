@@ -31,7 +31,8 @@
         name: "Varad",
         role: "Chief Technology Officer (CTO)",
         img: "/image/varad07.png",
-        big: true
+        big: true,
+        portfolio: "https://varadsonawane-portfolio.vercel.app/",
       }
     ]
   },

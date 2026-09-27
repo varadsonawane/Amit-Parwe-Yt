@@ -111,7 +111,7 @@ export default function Navbar() {
         
         <a
           href="#upcoming-guest"
-          className="text-white transition-all duration-300 whitespace-nowrap hover:text-[#8b8a8a] hover:-translate-y-1 opacity-0"
+  className="bg-brand-yellow text-black px-4 py-2 rounded-md font-medium transition-all duration-300 whitespace-nowrap hover:bg-brand-yellow-light hover:-translate-y-1 hover:shadow-lg opacity-0"
         >
           Speak Up
         </a>

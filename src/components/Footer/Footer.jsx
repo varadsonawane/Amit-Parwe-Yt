@@ -18,10 +18,10 @@ export default function Footer() {
             ज्ञान, अनुभव आणि विचारांना दिशा देणारा संवाद.
           </p>
           <a
-            href="mailto:tapthepodcast@gmail.com"
+            href="mailto:levelupamit@gmail.com"
             className="footer-mail inline-block text-brand-yellow font-bold text-base sm:text-lg md:text-xl border-b border-transparent hover:border-brand-yellow transition-all duration-200"
           >
-            tapthepodcast@gmail.com
+            levelupamit@gmail.com
           </a>
           <h1 className="topgo mt-4 sm:mt-6 text-gray-500 hover:text-white font-manrope text-base sm:text-lg md:text-xl cursor-pointer transition-colors justify-center md:justify-start flex">
             <a href="#home" >
@@ -77,6 +77,14 @@ export default function Footer() {
             &gt;YouTube
           </a>
           <a
+            href="https://www.linkedin.com/in/tap-podcast-the-amit-parwe-podcast-7a4089303"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"
+          >
+            &gt;Whatsapp
+          </a>
+          <a
             href="https://www.instagram.com/amitparweofficial"
             target="_blank"
             rel="noopener noreferrer"
@@ -92,6 +100,15 @@ export default function Footer() {
           >
             &gt;Linkedin
           </a>
+          <a
+            href="https://www.facebook.com/share/1FajmfS8eC/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"
+          >
+          &gt;Facebook
+          </a>
+          
         </div>
       </div>
 

@@ -51,18 +51,21 @@ export default function ChannelSlider() {
     >
       {/* ================= TITLE ================= */}
       <h1 className="titleleft font-poppins font-medium text-black leading-tight mb-6 lg:mb-0 lg:absolute lg:top-20 xl:top-24 lg:left-[7%] text-3xl sm:text-4xl md:text-5xl lg:text-[4.2rem] xl:text-[4.8rem] text-center lg:text-left select-none">
-        OUR <br className="hidden lg:inline" /> CHANNELS..
+        OUR  CHANNELS..
       </h1>
 
       {/* ================= LEFT CONTENT ================= */}
       <div className="slider-left w-full lg:w-[48%] xl:w-[45%] text-center lg:text-left z-[2] lg:mt-28 xl:mt-32">
         {/* CHANNEL NAME */}
-        <h2
-          id="channelName"
-          className={`font-staatliches font-normal text-black leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] mb-2 select-none ${textClass}`}
-        >
-          {currentChannel.name}
-        </h2>
+        {/* CHANNEL NAME */}
+<h2
+  id="channelName"
+  className={`font-staatliches font-normal text-black leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] mb-3 select-none ${textClass}`}
+>
+  <span className="inline-block rounded-4xl bg-sky-200 px-3 sm:px-4 md:px-5 py-1 leading-none">
+    {  currentChannel.name  }
+  </span>
+</h2>
 
         {/* DESCRIPTION */}
         {currentChannel.desc && (

@@ -4,11 +4,12 @@ import StatusModal from "./StatusModal";
 
 export default function Contact() {
   const formRef = useRef(null);
+
   const [modalStatus, setModalStatus] = useState({
     show: false,
     type: "success",
     title: "",
-    message: ""
+    message: "",
   });
 
   useEffect(() => {
@@ -20,34 +21,53 @@ export default function Contact() {
       show: true,
       type,
       title,
-      message: msg
+      message: msg,
     });
 
     setTimeout(() => {
-      setModalStatus((prev) => ({ ...prev, show: false }));
+      setModalStatus((prev) => ({
+        ...prev,
+        show: false,
+      }));
     }, 2500);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formRef.current) return;
 
-    emailjs
-      .sendForm("service_q4zl8hu", "template_gtyqgxg", formRef.current)
-      .then(() => {
-        emailjs.sendForm("service_q4zl8hu", "template_1aiaszt", formRef.current);
-        showStatus("success", "Request Sent 🎉", "We will contact you soon");
-        formRef.current.reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS error:", error);
-        showStatus("error", "Failed ❌", "Please try again later");
-      });
+    try {
+      await emailjs.sendForm(
+        "service_q4zl8hu",
+        "template_gtyqgxg",
+        formRef.current
+      );
+
+      showStatus(
+        "success",
+        "Request Sent 🎉",
+        "We will contact you soon"
+      );
+
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+
+      showStatus(
+        "error",
+        "Failed ❌",
+        "Please try again later"
+      );
+    }
   };
 
   return (
     <>
-      <section id="contact" className="guest-contact bg-black px-5 py-14 sm:py-16 md:px-[6%] md:py-20 lg:py-24 flex justify-center">
+      <section
+        id="contact"
+        className="guest-contact bg-black px-5 py-14 sm:py-16 md:px-[6%] md:py-20 lg:py-24 flex justify-center"
+      >
         <div className="guest-card-wrap relative rounded-3xl w-full max-w-[940px] shadow-2xl">
           <div className="guest-card w-full bg-[#0c0c0c] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-8 sm:gap-10 lg:gap-12 relative z-[1] overflow-hidden font-clash">
             <div className="shine"></div>
@@ -55,13 +75,16 @@ export default function Contact() {
             {/* LEFT CONTENT */}
             <div className="guest-left flex-1 text-white text-center md:text-left">
               <h2 className="font-clash text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.25rem] font-medium mb-3.5 leading-snug">
-                Be a Guest <span className="text-brand-yellow italic">on TAP Podcast</span>
+                Be a Guest on
+                <span className="text-brand-yellow italic">
+                  {" "}Amit Parwe
+                </span>
               </h2>
 
               <p className="text-[#bfbfbf] leading-relaxed mb-6 font-clash text-sm sm:text-base font-normal max-w-md mx-auto md:mx-0">
-                Have a story, experience, or knowledge worth sharing? Join TAP
-                Podcast and inspire thousands of listeners. Fill the form or
-                directly connect with us on WhatsApp.
+                Have a story, experience, or knowledge worth sharing? Join
+                Amit Parwe as a guest and inspire thousands of listeners.
+                Fill the form or directly connect with us on WhatsApp.
               </p>
 
               <div className="guest-icons flex justify-center md:justify-start gap-4 text-gray-300 font-hind font-medium text-base sm:text-lg md:text-xl">

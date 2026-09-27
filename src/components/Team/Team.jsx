@@ -141,7 +141,7 @@ export default function Team() {
 
                         w-full
                         px-3
-                        
+
                         opacity-0
                         translate-y-7
 
@@ -155,7 +155,8 @@ export default function Team() {
                         }
 
                         transition-all duration-300
-                        pointer-events-none
+
+                        pointer-events-auto
                       `}
                     >
                       {/* NAME */}
@@ -190,7 +191,7 @@ export default function Team() {
                           sm:text-xs
                           md:text-sm
                           lg:text-[15px]
-                          mb-5
+                          mb-4
                           leading-tight
                           opacity-90
                         "
@@ -204,6 +205,44 @@ export default function Team() {
                           </>
                         )}
                       </p>
+
+                      {/* ================= PORTFOLIO BUTTON ================= */}
+                      {member.portfolio && (
+                        <a
+                          href={member.portfolio}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="
+                            inline-flex
+                            items-center
+                            justify-center
+                            gap-1.5
+                            bg-brand-yellow
+                            text-black
+                            border
+                            border-brand-yellow
+                            rounded-full
+                            px-3
+                            py-1.5
+                            text-[10px]
+                            sm:text-xs
+                            font-funnel
+                            font-semibold
+                            transition-all
+                            duration-300
+                            hover:bg-white
+                            hover:border-white
+                            hover:-translate-y-0.5
+                            hover:shadow-lg
+                          "
+                        >
+                          Portfolio
+                          <span className="text-sm leading-none">
+                            ↗
+                          </span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 );

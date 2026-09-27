@@ -8,10 +8,25 @@ export default function FindUs() {
       </h2>
 
       <p className="find-sub text-gray-400 font-clash font-medium text-sm sm:text-base md:text-[1.05rem] max-w-xl mx-auto mb-8 sm:mb-10 px-4 leading-relaxed">
-        आमच्याशी सोशल मीडियावर जोडा आणि प्रत्येक नवीन भागाची अपडेट मिळवा
+        Follow करा आणि पुढचा भाग चुकवू नका!
       </p>
 
-      <div className="social-buttons flex justify-center items-center gap-3 sm:gap-4 md:gap-5 flex-wrap max-w-2xl mx-auto">
+      <div className="social-buttons flex justify-center items-center gap-3 sm:gap-4 md:gap-5 flex-wrap lg:flex-nowrap max-w-2xl mx-auto">
+        
+        <a
+          href=""
+          target="_blank"
+          className="social-btn group flex items-center justify-center gap-2.5 px-5 py-2.5 sm:px-6 sm:py-3 border-[1.5px] border-white text-white rounded-lg bg-transparent relative overflow-hidden transition-all duration-300 font-clash font-medium text-sm sm:text-[15px] md:text-base w-full sm:w-auto hover:text-black"
+          rel="noopener noreferrer"
+        >
+          <span className="relative z-[1]">Whatsapp</span>
+          <img
+            src="/image/whatsapp.png"
+            alt="LinkedIn"
+            className="w-4 h-4 sm:w-4.5 sm:h-4.5 invert relative z-[1] transition-all duration-300 group-hover:invert-0"
+          />
+        </a>
+        
         <a
           href="https://www.instagram.com/amitparweofficial"
           target="_blank"
@@ -67,6 +82,7 @@ export default function FindUs() {
             className="w-4 h-4 sm:w-4.5 sm:h-4.5 invert relative z-[1] transition-all duration-300 group-hover:invert-0"
           />
         </a>
+        
 
       </div>
     </section>

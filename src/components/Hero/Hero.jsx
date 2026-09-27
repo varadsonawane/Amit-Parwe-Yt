@@ -63,7 +63,7 @@ className="hero relative isolate h-screen w-full overflow-hidden flex justify-ce
        <h1 className=" font-Plus Jakarta Sans font-black tracking-tight leading-[1.1] mb-2.5 text-[34px] sm:text-[42px] md:text-[52px] md:whitespace-nowrap lg:text-[58px] lg:whitespace-nowrap xl:text-[62px]">
   <TextType
     text={[
-      "LevelUp with",
+      "Level Up with",
      
     ]}
     typingSpeed={80}
@@ -75,7 +75,7 @@ className="hero relative isolate h-screen w-full overflow-hidden flex justify-ce
 
   {" "}
 
-  <span className="text-brand-yellow-hero font-playfair">
+  <span className="text-brand-yellow-hero font-playfair tracking-[0.04em]">
     <br/>Amit Parwe
   </span>
 </h1>
