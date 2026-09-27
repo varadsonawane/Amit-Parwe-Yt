@@ -48,7 +48,7 @@ className="hero relative isolate h-screen w-full overflow-hidden flex justify-ce
         className="bg-video absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-full h-full object-cover -z-20"
         poster="/image/hero-poster.webp"
       >
-        <source src="/video/Hostbg1.mp4" type="video/mp4" />
+        <source src="/video/Hostbg1.webm" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
