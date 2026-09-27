@@ -5,7 +5,7 @@
     desc2: "INSTAGRAM : 20K+ FOLLOWERS",
     link: "https://www.youtube.com/@amitparweofficial",
     link2: "https://www.instagram.com/amitparweofficial",
-    img: "/image/hostchannel1.jpeg"
+    img: "/image/hostchannel1.jpg"
   },
   {
     name: "Amit Parwe Clips",
