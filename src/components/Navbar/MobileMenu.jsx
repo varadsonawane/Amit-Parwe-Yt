@@ -24,12 +24,13 @@ export default function MobileMenu() {
         duration: 0.5,
       });
 
-      tl.from(".bart2 a", {
-        opacity: 0,
-        top: 150,
-        duration: 0.5,
-        stagger: 0.2,
-      });
+     tl.from(".bart2 a", {
+  opacity: 0,
+  y: 40,
+  duration: 0.45,
+  stagger: 0.12,
+  ease: "power3.out",
+});
 
       tl.from(".bart2 i", {
         opacity: 0,
@@ -88,6 +89,13 @@ export default function MobileMenu() {
           className="text-white flex justify-center items-center gap-2 font-funnel font-light text-2xl sm:text-3xl leading-none transition-colors hover:text-brand-yellow"
         >
           Our Channels
+        </a>
+        <a
+          href="#upcoming-guest"
+          onClick={handleClose}
+          className="text-white flex justify-center items-center gap-2 font-funnel font-light text-2xl sm:text-3xl leading-none transition-colors hover:text-brand-yellow"
+        >
+          Speak Up
         </a>
         <a
           href="#team"

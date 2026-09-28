@@ -230,6 +230,7 @@ export default function Team() {
                             font-funnel
                             font-semibold
                             transition-all
+                             mb-5
                             duration-300
                             hover:bg-white
                             hover:border-white
