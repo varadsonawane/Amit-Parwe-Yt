@@ -14,7 +14,7 @@ export default function FindUs() {
       <div className="social-buttons flex justify-center items-center gap-3 sm:gap-4 md:gap-5 flex-wrap lg:flex-nowrap max-w-2xl mx-auto">
         
         <a
-          href=""
+          href="https://whatsapp.com/channel/0029VbDeomdJJhzVitpUoi3E"
           target="_blank"
           className="social-btn group flex items-center justify-center gap-2.5 px-5 py-2.5 sm:px-6 sm:py-3 border-[1.5px] border-white text-white rounded-lg bg-transparent relative overflow-hidden transition-all duration-300 font-clash font-medium text-sm sm:text-[15px] md:text-base w-full sm:w-auto hover:text-black"
           rel="noopener noreferrer"

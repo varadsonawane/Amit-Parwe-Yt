@@ -77,7 +77,7 @@ export default function Footer() {
             &gt;YouTube
           </a>
           <a
-            href="https://www.linkedin.com/in/tap-podcast-the-amit-parwe-podcast-7a4089303"
+            href="https://whatsapp.com/channel/0029VbDeomdJJhzVitpUoi3E"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"

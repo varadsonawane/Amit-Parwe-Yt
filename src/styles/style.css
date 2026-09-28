@@ -1806,9 +1806,9 @@ img{
     z-index:0;
 }
 
-.social-btn:hover::before{
+/* .social-btn:hover::before{
     transform:translateX(0);
-}
+} */
 .social-btn span{
     position:relative;
     z-index:1;
